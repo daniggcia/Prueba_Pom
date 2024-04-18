@@ -15,7 +15,7 @@ public class UserLoginSteps {
 
     @Given("^the user open the browser$")
     public void openBrowser() {
-        System.setProperty("webdriver.chrome.driver", "/ruta/a/tu/driver/chromedriver");
+        System.setProperty("web driver.chrome.driver", "src/test/resources/drivers/windows");
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
     }
@@ -24,6 +24,7 @@ public class UserLoginSteps {
     public void navigateToLoginPage() {
         driver.get("https://www.saucedemo.com/");
     }
+
 
     @When("^the user enters valid credentials$")
     public void enterValidCredentials() {
