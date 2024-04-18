@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.LoginPage;
 
 public class UserLoginSteps {
@@ -15,8 +16,8 @@ public class UserLoginSteps {
 
     @Given("^the user open the browser$")
     public void openBrowser() {
-        System.setProperty("webdriver.chrome.driver", "D:\\projects\\prueba_POM\\src\\test\\resources\\drivers");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "D:\\projects\\prueba_POM\\src\\test\\resources\\drivers\\geckodriver.exe");
+        driver = new FirefoxDriver();
         loginPage = new LoginPage(driver);
     }
 
