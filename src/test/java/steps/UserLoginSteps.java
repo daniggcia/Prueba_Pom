@@ -15,7 +15,7 @@ public class UserLoginSteps {
 
     @Given("^the user open the browser$")
     public void openBrowser() {
-        System.setProperty("web driver.chrome.driver", "src/test/resources/drivers/windows");
+        System.setProperty("webdriver.chrome.driver", "D:\\projects\\prueba_POM\\src\\test\\resources\\drivers");
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
     }
