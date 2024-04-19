@@ -13,6 +13,10 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    public void openURL(String url) {
+        driver.get(url);
+    }
+
     public void enterUsername(String username) {
         driver.findElement(usernameField).sendKeys(username);
     }

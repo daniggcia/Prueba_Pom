@@ -18,12 +18,14 @@ public class UserLoginSteps {
     public void openBrowser() {
         System.setProperty("webdriver.gecko.driver", "D:\\projects\\prueba_POM\\src\\test\\resources\\drivers\\firefox\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
+        driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
     }
 
 
     @When("^the user enters valid credentials$")
     public void enterValidCredentials() {
+        loginPage.openURL("https://www.saucedemo.com/");
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
     }
