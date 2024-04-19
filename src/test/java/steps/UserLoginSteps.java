@@ -22,18 +22,15 @@ public class UserLoginSteps {
         loginPage = new LoginPage(driver);
     }
 
-
     @When("^the user enters valid credentials$")
     public void enterValidCredentials() {
-        loginPage.openURL("https://www.saucedemo.com/");
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
     }
 
-
     @Then("^the user should be logged in successfully$")
     public void verifyLoginSuccess() {
-        driver.get("https://www.saucedemo.com/inventory.html");
+        loginPage.verifyLoginSuccess("https://www.saucedemo.com/inventory.html");
     }
 
     @And("^the user clicks on the login button$")
@@ -43,11 +40,11 @@ public class UserLoginSteps {
 
     @And("^the user is on the login page$")
     public void navigateToLoginPage() {
-        driver.get("https://www.saucedemo.com/");
+        loginPage.navigateToLoginPage("https://www.saucedemo.com/");
     }
 
     @And("the user close the browser")
     public void theUserCloseTheBrowser() {
-        driver.quit();
+        loginPage.theUserCloseTheBrowser();;
     }
 }

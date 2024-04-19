@@ -28,4 +28,10 @@ public class LoginPage {
     public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }
+
+    public void verifyLoginSuccess(String url) { driver.get(url);}
+
+    public void navigateToLoginPage(String url) { driver.get(url);}
+
+    public void theUserCloseTheBrowser() { driver.quit();}
 }
