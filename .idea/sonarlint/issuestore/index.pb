@@ -142,3 +142,9 @@ G.idea/sonarlint/issuestore/8/7/8722a7387cefb8cc324f98eab74ce6a5df22f82e,b\e\be
 Q.idea/sonarlint/securityhotspotstore/f/6/f6d8310b47b1802ff534ff6900f24d2d3b76c4f1,d\4\d49052b5c99e4aed190a06219a866f7dc2d8b67d
 w
 G.idea/sonarlint/issuestore/0/2/0284fdcecfe830dd8479c1210e86b5d37e15273d,3\1\318ff3a44ede2577c119cc83d79baf96272c0914
+S
+#src/test/java/utils/TestRunner.java,a\9\a9c506e8ba74a8b70a5a74fa34373db7796cfd32
+c
+3src/test/java/steps_definitions/UserLoginSteps.java,f\5\f56fe518e553e92e5456c34e2301d02aef75b8b9
+P
+ src/test/java/pom/LoginPage.java,3\0\301da01e362c80920737a220c985fcc5efc9796a

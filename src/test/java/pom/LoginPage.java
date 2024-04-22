@@ -1,7 +1,8 @@
-package pages;
+package pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage {
     private WebDriver driver;
@@ -17,6 +18,7 @@ public class LoginPage {
         driver.get(url);
     }
 
+
     public void enterUsername(String username) {
         driver.findElement(usernameField).sendKeys(username);
     }
@@ -29,9 +31,22 @@ public class LoginPage {
         driver.findElement(loginButton).click();
     }
 
-    public void verifyLoginSuccess(String url) { driver.get(url);}
+    public void verifyLoginSuccess(String url) {
+        driver.get(url);
+    }
 
-    public void navigateToLoginPage(String url) { driver.get(url);}
+    public void navigateToLoginPage(String url) {
+        driver.get(url);
+    }
 
-    public void theUserCloseTheBrowser() { driver.quit();}
+    public void theUserCloseTheBrowser() {
+        driver.quit();
+    }
+
+    public String getErrorMessage() {
+        WebElement errorMessageElement = driver.findElement(By.xpath("//*[@id='login_button_container']/div/form/div[3]/h3"));
+        String errorMessage = errorMessageElement.getText();
+        return errorMessage;
+    }
 }
+

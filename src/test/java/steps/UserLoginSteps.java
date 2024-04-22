@@ -5,10 +5,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.LoginPage;
+import pom.LoginPage;
 
 public class UserLoginSteps {
     private WebDriver driver;
@@ -28,9 +28,23 @@ public class UserLoginSteps {
         loginPage.enterPassword("secret_sauce");
     }
 
+    @When("^the user enters invalid credentials$")
+    public void enterInvalidCredentials() {
+        loginPage.enterUsername("praetorian_one");
+        loginPage.enterPassword("alabama_dos");
+    }
     @Then("^the user should be logged in successfully$")
     public void verifyLoginSuccess() {
         loginPage.verifyLoginSuccess("https://www.saucedemo.com/inventory.html");
+    }
+    @Then("^the user should see an error message$")
+    public void verifyErrorMessage() {
+        String expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service"; // Definir el mensaje de error esperado
+        String actualErrorMessage; // Obtener el mensaje de error real desde la página
+        actualErrorMessage = loginPage.getErrorMessage();
+        // Verificar que el mensaje de error mostrado coincide con el esperado
+        Assert.assertTrue("Error message does not contain the expected message", actualErrorMessage.contains(expectedErrorMessage));
+
     }
 
     @And("^the user clicks on the login button$")
